@@ -1,0 +1,11 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^www\.musenko\.com [NC]
+RewriteRule (.*) http://musenko.com/$1 [L,R=301]
+
+Options +FollowSymLinks
+Options -Indexes
+
+<Files ~ "\.(tpl|inc|lib)$">
+  Deny from all
+</Files>
